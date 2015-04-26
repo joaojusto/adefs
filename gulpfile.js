@@ -88,7 +88,7 @@ gulp.task('jshint', function () {
 });
 
 gulp.task('fileinclude', function() {
-  return gulp.src('app/**.html')
+  return gulp.src('app/*.html')
     .pipe(fileinclude('@@'))
     .pipe(gulp.dest('.tmp/'));
 });
@@ -152,7 +152,7 @@ gulp.task('serve', ['stylesheet', 'javascript', 'fonts'], function () {
 
   // watch for changes
   gulp.watch([
-    'app/*.html',
+    'app/**/*.html',
     'app/js/**/*.js',
     'app/images/**/*',
     '.tmp/fonts/**/*'
