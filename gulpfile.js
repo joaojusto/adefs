@@ -8,6 +8,7 @@ var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
+var fileinclude = require('gulp-file-include');
 
 var through2 = require('through2');
 var browserify = require('browserify');
@@ -86,6 +87,12 @@ gulp.task('jshint', function () {
     .pipe($.if(!browserSync.active, $.jshint.reporter('fail')));
 });
 
+gulp.task('fileinclude', function() {
+  return gulp.src('app/**.html')
+    .pipe(fileinclude('@@'))
+    .pipe(gulp.dest('.tmp/'));
+});
+
 gulp.task('html', ['stylesheet'], function () {
   var assets = $.useref.assets({searchPath: ['.tmp', 'app', '.']});
 
@@ -95,6 +102,7 @@ gulp.task('html', ['stylesheet'], function () {
     .pipe($.if('*.css', $.csso()))
     .pipe(assets.restore())
     .pipe($.useref())
+    .pipe($.if('*.html', fileinclude('@@')))
     .pipe($.if('*.html', $.minifyHtml({conditionals: true, loose: true})))
     .pipe(gulp.dest('dist'));
 });
@@ -150,6 +158,7 @@ gulp.task('serve', ['stylesheet', 'javascript', 'fonts'], function () {
     '.tmp/fonts/**/*'
   ]).on('change', reload);
 
+  gulp.watch('app/**/*.html', ['fileinclude']);
   gulp.watch('app/css/**/*.scss', ['stylesheet']);
   gulp.watch('app/js/**/*.js', ['javascript']);
   gulp.watch('app/fonts/**/*', ['fonts']);
