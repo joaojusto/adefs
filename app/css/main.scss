@@ -1,6 +1,7 @@
 // bower:scss
 // endbower
-
+@import "./_theme";
 @import "./layout/main";
 @import "./components/intro";
+@import "./components/navbar";
 @import "./components/footer";

@@ -1,0 +1,27 @@
+$navbar-height: 50px;
+
+.Topbar {
+  width: 100%;
+  height: $navbar-height;
+  display: flex;
+  flex-direction: row;
+  background: $blue;
+}
+
+.Topbar-logo {
+  height: 100%;
+}
+
+.Topbar-link {
+  color: $white;
+  padding: 0 $base-spacing;
+  text-align: center;
+  line-height: $navbar-height;
+  text-decoration: none;
+}
+
+.Topbar-link:hover {
+  color: $white;
+  background: $green;
+  text-decoration: none;
+}

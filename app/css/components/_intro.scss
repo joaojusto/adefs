@@ -1,10 +1,25 @@
+$overlay-color: $black;
+$overlay-opacity: 0.6;
+
 .Intro {
   height: 100vh;
   display: flex;
   justify-content: center;
   flex-direction: column;
-  background-image: url('../images/main_background.jpg');
+  background-image: linear-gradient(rgba($overlay-color, $overlay-opacity),
+    rgba($overlay-color, $overlay-opacity)),
+    url('../images/main_background.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+.Intro-header {
+  color: $white;
+  text-align: center;
+}
+
+.Intro-subHeader {
+  color: $white;
+  text-align: center;
 }
