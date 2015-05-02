@@ -5,10 +5,8 @@ $overlay-opacity: 0.6;
   height: 100vh;
   display: flex;
   justify-content: center;
-  flex-direction: column;
-  background-image: linear-gradient(rgba($overlay-color, $overlay-opacity),
-    rgba($overlay-color, $overlay-opacity)),
-    url('../images/main_background.jpg');
+  flex-direction: row;
+  background-image: url('../images/main_background.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

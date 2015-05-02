@@ -1,0 +1,10 @@
+.TextBox {
+  height: 200px;
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex;
+  background-color: rgba(0, 0, 0, 0.2);
+  align-self: center;
+  border-radius: 6px;
+}
