@@ -1,13 +1,14 @@
 .Contacts {
-  height: 100vh;
   display: flex;
+  color: $grey;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  color: $white;
-  background: $blue;
+  background: $white;
 }
 
 .Contacts-textContainer {
-  max-width: 960px;
+  width: 100%;
+  max-width: 760px;
+  padding: 50px;
 }
