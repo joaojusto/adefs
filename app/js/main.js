@@ -1,3 +1,3 @@
 /* jshint devel:true */
-$("#gallery").justifiedGallery();
-$("#gallery_two").justifiedGallery();
+$('#gallery').justifiedGallery();
+$('#gallery_two').justifiedGallery();
